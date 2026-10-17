@@ -1,0 +1,2 @@
+# weirdoComics
+Proyecto desarrollo web
