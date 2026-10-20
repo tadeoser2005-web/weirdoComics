@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeirdoComics</title>
-    <link rel = "stylesheet"
-    href="assets/css/style.css"
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <form>
-        <h2>WEIRDO</h2>
-        <h3>COMICS</h3>
-        <p>Acceso al sistema administrativo</p>
+<div class="login-panel">
+    <h2 class="h2W">WEIRDO</h2>
+    <h3 class="h2C">COMICS</h3>
+    <p>Acceso al sistema administrativo</p>
+    <form class="formulario">
+
         <div>
 
 <label for="correo">
-    Correo electronico
+   <!-- Correo electronico-->
 </label>
 <input 
 type="text"
@@ -29,7 +30,7 @@ placeholder="Correo electronico"
 
 <div>
 <label for="contrasena">
-    Contrasena
+
 </label>
 <input 
 type="password"
@@ -52,6 +53,8 @@ name="btnlogin"
 </button>
 
     </form>
+    <p>Las credenciales determinan rol y remisos dentro del sistema</p>
+    </div>
 </body>
 </html>
 
