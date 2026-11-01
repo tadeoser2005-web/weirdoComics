@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventario | Weirdo Comics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="rojo">WEIRDO</span>
+            <span class="blanco">COMICS</span>
+        </div>
+        <div class="rol">Almacén</div>
+        <nav>
+            <a href="Inicio.html">Inicio</a>
+            <a href="Ventas.html">Ventas</a>
+            <a href="inventario.html" class="activo">Inventario</a>
+            <a href="proveedores.html">Proveedores</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="reportes.html" class="separar">Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="roles.html">Roles y permisos</a>
+        </nav>
+        <a href="index.php" class="cerrar">Cerrar sesión</a>
+    </aside>    <main class="contenido">
+        <h1>Inventario</h1>
+        <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+        <h2>Inventario de productos</h2>
+
+        <form class="filtros-fecha" action="inventario.html" method="get">
+            <div>
+                <label for="f-estado" style="font-size:12px;font-weight:700;display:block;margin-bottom:6px">Estado</label>
+                <select class="selector" id="f-estado" name="estado" style="width:200px">
+                    <option value="">Todos los estados</option>
+                    <option value="normal">Normal</option>
+                    <option value="minimo">Mínimo</option>
+                    <option value="bajo">Stock bajo</option>
+                    <option value="sin">Sin stock</option>
+                </select>
+            </div>
+            <div>
+                <label for="f-tipo" style="font-size:12px;font-weight:700;display:block;margin-bottom:6px">Tipo</label>
+                <select class="selector" id="f-tipo" name="tipo" style="width:160px">
+                    <option value="">Todos</option>
+                    <option value="comic">Cómics</option>
+                    <option value="articulo">Artículos</option>
+                </select>
+            </div>
+            <a class="btn btn-gris" href="inventario.html?estado=normal">Normal</a>
+            <a class="btn btn-gris" href="inventario.html?estado=bajo">Stock bajo</a>
+            <a class="btn btn-gris" href="inventario.html?estado=sin">Sin stock</a>
+            <button class="btn" type="submit">Aplicar</button>
+        </form>
+
+        <div class="barra">
+            <a class="btn" href="producto-nuevo.html">+ Nuevo producto</a>
+        </div>
+
+        <div class="tabla-contenedor">
+            <table class="tabla">
+                <thead>
+                <tr><th>Código</th>
+                    <th>Producto</th>
+                    <th>Tipo</th>
+                    <th>Stock</th>
+                    <th>Mínimo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>C-001</td>
+                    <td>One Piece #108</td>
+                    <td>Cómic</td>
+                    <td>18</td>
+                    <td>5</td>
+                    <td class="estado estado-ok">Normal</td>
+                    <td><a href="producto-detalle.html">Ver / Editar</a></td>
+                </tr>
+                <tr><td>C-002</td>
+                    <td>Batman: Año Uno</td>
+                    <td>Cómic</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td class="estado estado-aviso">Mínimo</td>
+                    <td><a href="producto-detalle.html">Ver / Editar</a></td>
+                </tr>
+                <tr><td>C-003</td>
+                    <td>Spider-Man #12</td>
+                    <td>Cómic</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td class="estado estado-aviso">Stock bajo</td>
+                    <td><a href="producto-detalle.html">Ver / Editar</a></td>
+                </tr>
+                <tr><td>A-044</td>
+                    <td>Figura especial</td>
+                    <td>Artículo</td>
+                    <td>0</td
+                    ><td>2</td>
+                    <td class="estado estado-malo">Sin stock</td>
+                    <td><a href="producto-detalle.html">Ver / Editar</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+</body>
+</html>

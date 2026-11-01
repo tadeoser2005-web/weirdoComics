@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar producto | Weirdo Comics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="rojo">WEIRDO</span>
+            <span class="blanco">COMICS</span>
+        </div>
+        <div class="rol">Almacén</div>
+        <nav>
+            <a href="Inicio.html">Inicio</a>
+            <a href="Ventas.html">Ventas</a>
+            <a href="inventario.html" class="activo">Inventario</a>
+            <a href="proveedores.html">Proveedores</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="reportes.html" class="separar">Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="roles.html">Roles y permisos</a>
+        </nav>
+        <a href="index.php" class="cerrar">Cerrar sesión</a>
+    </aside>
+    <main class="contenido">
+        <h1>Nuevo producto</h1>
+        <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+        <div class="detalle-grid">
+            <div class="imagen-placeholder">IMAGEN</div>
+
+            <form class="form-datos" action="inventario.html" method="get" style="max-width:none">
+                <label for="codigo">Código</label>
+                <input class="campo" id="codigo" name="codigo" type="text"  value="C-001" required>
+
+                <label for="nombre">Nombre</label>
+                <input class="campo" id="nombre" name="nombre" type="text" value="One Piece #108" required>
+
+                <label for="tipo">Tipo</label>
+                <select class="selector" id="tipo" name="tipo"  required>
+                    <option value="comic">Cómic</option>
+                    <option value="articulo">Artículo</option>
+                </select>
+
+                <label for="extra">Editorial / Categoría</label>
+                <input class="campo" id="extra" name="extra" type="text" value="CimicsStan" required>
+
+                <div class="fila-campos">
+                    <div>
+                        <label for="precio">Precio</label>
+                        <input class="campo" id="precio" name="precio" type="text" value="$600" required>
+                    </div>
+                    <div>
+                        <label for="minimo">Stock mínimo</label>
+                        <input class="campo" id="minimo" name="minimo" type="number" value="5" required>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button class="btn" type="submit">Guardar</button>
+                    <a class="btn" href="eliminar-producto.html">Eliminar</a>
+                    <a class="btn btn-oscuro" href="inventario.html">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

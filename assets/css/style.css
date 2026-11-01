@@ -8,7 +8,111 @@ html{
 
     scroll-behavior: smooth;   /* comportamiento del scroll */
 
-}   /* selector html */
+}
+
+
+/* selector html */
+
+:root {
+    --rojo: #c01f26;
+    --oscuro: #15161d;
+    --fondo: #f4f4f8;
+    --blanco: #ffffff;
+    --texto: #1c1d24;
+    --gris: #6b6d78;
+    --sidebar-ancho: 240px;
+}
+
+.layout { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: var(--sidebar-ancho);
+    flex-shrink: 0;
+    background: var(--oscuro);
+    color: #d9dae0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 12px;
+}
+
+.logo { padding: 0 12px; font-weight: 800; line-height: 1.15; }
+.logo .rojo { color: var(--rojo); font-size: 22px; display: block; }
+.logo .blanco { color: var(--blanco); font-size: 18px; display: block; }
+
+.rol { padding: 0 12px; margin: 20px 0 16px; font-size: 12px; color: #9b9ca8; }
+
+.sidebar nav { display: flex; flex-direction: column; gap: 4px; }
+
+.sidebar nav a {
+    color: #d9dae0;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.sidebar nav a:hover { background: rgba(255, 255, 255, 0.08); }
+.sidebar nav a.activo { background: var(--rojo); color: var(--blanco); font-weight: 600; }
+.sidebar nav a.separar { margin-bottom: 20px; }
+
+.sidebar .cerrar {
+    margin-top: auto;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #d9dae0;
+    text-decoration: none;
+}
+.sidebar .cerrar:hover { color: var(--blanco); }
+
+.contenido { flex: 1; padding: 32px 40px; min-width: 0; }
+
+.contenido h1 { margin: 0; font-size: 28px; font-weight: 700; }
+.contenido .subtitulo { margin: 4px 0 32px; font-size: 13px; color: var(--gris); }
+.contenido h2 { margin: 0 0 16px; font-size: 16px; font-weight: 700; }
+
+/* ----- Tarjetas del panel principal ----- */
+.grid-modulos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 960px;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 24px;
+    min-height: 108px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tarjeta h3 { margin: 0; font-size: 16px; font-weight: 700; }
+.tarjeta a {
+    color: var(--rojo);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.tarjeta a:hover { text-decoration: underline; }
+
+/* Foco visible para teclado */
+a:focus-visible { outline: 2px solid var(--rojo); outline-offset: 2px; }
+
+/* ----- Pantallas chicas ----- */
+@media (max-width: 900px) {
+    .grid-modulos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; padding: 16px; }
+    .sidebar nav { flex-direction: row; flex-wrap: wrap; }
+    .sidebar nav a.separar { margin-bottom: 0; }
+    .sidebar .cerrar { margin-top: 12px; }
+    .contenido { padding: 24px 16px; }
+    .grid-modulos { grid-template-columns: 1fr; }
+}
+
 .login-panel {
     background-color: #ffffff;
     text-align: center;
@@ -94,3 +198,176 @@ p {
     color: #555555;
     opacity: 0.6;
 }
+
+
+/* =====================================================
+   A PARTIR DE AQUÍ: COMPONENTES PARA TODO EL PROYECTO
+   (tablas, botones, formularios de datos, reportes, etc.)
+   ===================================================== */
+
+/* =====================================================
+   COMPONENTES COMPARTIDOS (todas las pantallas)
+   ===================================================== */
+:root {
+    --verde: #1f8f55;
+    --ambar: #c98a00;
+    --gris-claro: #eeecef;
+    --azul-foco: #1e90ff;
+    --borde-fila: #f0f0f4;
+}
+
+/* ----- Botones ----- */
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 8px;
+    background: var(--rojo);
+    color: var(--blanco);
+    font: 600 13px "Inter", "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:focus-visible { outline: 2px solid var(--azul-foco); outline-offset: 2px; }
+.btn-oscuro { background: var(--oscuro); }
+.btn-verde  { background: var(--verde); }
+.btn-gris   { background: var(--gris-claro); color: var(--texto); }
+.btn-bloque { display: block; width: 100%; }
+
+.botones { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+
+/* ----- Barra superior de listas: buscador + filtros + botón ----- */
+.barra { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 24px; }
+.barra .buscador { flex: 1; min-width: 200px; }
+
+/* ----- Campos de formulario ----- */
+.campo, .buscador, .selector {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--blanco);
+    color: var(--texto);
+    font: 400 13px "Inter", "Segoe UI", Arial, sans-serif;
+}
+.campo::placeholder, .buscador::placeholder { color: var(--gris); }
+.campo:focus, .buscador:focus, .selector:focus {
+    outline: 3px solid var(--azul-foco);
+    outline-offset: 0;
+}
+.campo-gris { background: var(--gris-claro); }   /* login */
+
+.form-datos { max-width: 760px; }
+.form-datos label {
+    display: block;
+    margin: 14px 0 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.fila-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.nota { margin-top: 14px; font-size: 12px; color: var(--ambar); }
+
+/* Detalle con imagen a la izquierda (cómic / artículo) */
+.detalle-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 32px; max-width: 900px; }
+.imagen-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 280px;
+    border-radius: 12px;
+    background: var(--gris-claro);
+    color: var(--gris);
+    font-weight: 700; font-size: 14px;
+}
+
+/* ----- Tablas ----- */
+.tabla-contenedor { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+.tabla th {
+    padding: 16px;
+    background: var(--oscuro);
+    color: var(--blanco);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+}
+.tabla th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+.tabla th:last-child  { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+.tabla td { padding: 20px 16px; background: var(--blanco); border-bottom: 1px solid var(--borde-fila); }
+.tabla tr:last-child td { border-bottom: none; }
+.tabla .centro { text-align: center; }
+.tabla a { color: var(--texto); text-decoration: none; }
+.tabla a:hover { color: var(--rojo); text-decoration: underline; }
+
+/* ----- Estados (texto de color) ----- */
+.estado { font-weight: 600; }
+.estado-ok    { color: var(--verde); }   /* Pagada, Completado, Normal, Activo */
+.estado-aviso { color: var(--ambar); }   /* Pendiente, En tránsito, Mínimo, Stock bajo */
+.estado-malo  { color: var(--rojo); }    /* Sin stock, Inactivo */
+
+/* ----- Tarjetas de estadísticas (Reportes) ----- */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-bottom: 28px; }
+.stat { padding: 20px; border-radius: 12px; background: var(--blanco); }
+.stat .etiqueta { font-size: 12px; color: var(--gris); }
+.stat .valor { margin-top: 6px; font-size: 28px; font-weight: 700; }
+.stat .detalle { margin-top: 4px; font-size: 11px; color: var(--gris); }
+
+.filtros-fecha { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; margin-bottom: 20px; }
+.filtros-fecha .campo { width: 160px; }
+
+.reporte-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.panel { padding: 20px; border-radius: 12px; background: var(--blanco); }
+.panel .tabla th, .panel .tabla td { background: transparent; color: var(--texto); }
+.panel .tabla th { border-bottom: 1px solid var(--texto); }
+
+/* ----- Tarjeta informativa / ficha (detalle de venta, pedido) ----- */
+.ficha { display: flex; flex-wrap: wrap; gap: 24px; max-width: 520px; padding: 24px; margin-bottom: 28px; border-radius: 12px; background: var(--blanco); }
+.ficha h3 { margin: 0 0 12px; font-size: 20px; }
+.ficha p { margin: 6px 0; font-size: 12px; color: var(--gris); }
+.fichas-fila { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
+.fichas-fila .ficha { margin-bottom: 0; min-width: 220px; }
+.ficha .grande { font-size: 24px; font-weight: 700; color: var(--texto); }
+
+.total { display: flex; justify-content: flex-end; align-items: baseline; gap: 24px; margin-top: 16px; font-weight: 700; font-size: 12px; }
+.total .monto { font-size: 22px; color: var(--rojo); }
+
+/* ----- Confirmaciones (eliminar, acceso denegado) ----- */
+.centrado { display: flex; justify-content: center; align-items: center; min-height: 60vh; }
+.confirmacion { width: 100%; max-width: 640px; padding: 48px 40px; border-radius: 16px; background: var(--blanco); text-align: center; }
+.confirmacion h2 { margin: 0 0 12px; font-size: 20px; color: var(--rojo); }
+.confirmacion .nombre { margin: 0 0 12px; font-weight: 700; }
+.confirmacion p { margin: 0 0 28px; font-size: 12px; color: var(--gris); }
+.confirmacion .botones { justify-content: center; margin-top: 0; }
+
+/* ----- Matriz de permisos ----- */
+.matriz td:not(:first-child), .matriz th:not(:first-child) { text-align: center; }
+
+/* ----- Responsive de componentes ----- */
+@media (max-width: 900px) {
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .reporte-layout { grid-template-columns: 1fr; }
+    .detalle-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    .stats, .fila-campos { grid-template-columns: 1fr; }
+    .confirmacion { padding: 32px 20px; }
+}
+
+/* ----- Compatibilidad con el CSS base (input global, body y p) ----- */
+.campo, .buscador, .selector { height: auto; }
+.form-datos label { background: none; width: auto; height: auto; }
+.tabla td, .tabla th { font-family: inherit; }
+.tabla td { color: var(--texto); }
+.ficha p, .confirmacion p, .nota { opacity: 1; }
+.stat .etiqueta, .stat .detalle { opacity: 1; }
+
+
+/* ----- Ticket (detalle de venta) ----- */
+.ficha-ticket { max-width: 640px; justify-content: space-between; align-items: center; }
+.ticket { width: 200px; padding: 14px; background: #f1f1f4; color: var(--texto); font-size: 9px; }
+.ticket .t-titulo { text-align: center; font-weight: 700; font-size: 11px; }
+.ticket .t-sub { text-align: center; color: var(--gris); font-size: 8px; margin-bottom: 4px; }
+.ticket .linea, .ticket .t-total { display: flex; justify-content: space-between; margin: 3px 0; }
+.ticket hr { border: none; border-top: 1px dashed var(--gris); margin: 8px 0; }
+.ticket .t-total { font-weight: 700; }
+.ticket .t-gracias { margin-top: 10px; text-align: center; font-size: 7px; color: var(--gris); }

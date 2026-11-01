@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalle de venta | Weirdo Comics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="rojo">WEIRDO</span>
+            <span class="blanco">COMICS</span>
+        </div>
+        <div class="rol">Almacén</div>
+        <nav>
+            <a href="Inicio.html">Inicio</a>
+            <a href="Ventas.html" class="activo">Ventas</a>
+            <a href="inventario.html" >Inventario</a>
+            <a href="proveedores.html">Proveedores</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="reportes.html" class="separar">Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="roles.html">Roles y permisos</a>
+        </nav>
+        <a href="index.php" class="cerrar">Cerrar sesión</a>
+    </aside>
+
+    <main class="contenido">
+        <h1>Detalle de venta #000124</h1>
+        <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+        <div class="ficha">
+            <div>
+                <h3>Venta #000124</h3>
+                <p>Fecha: 02/10/2026 12:45</p>
+                <p class="estado estado-ok">Estado: PAGADA</p>
+                <p>Método: Efectivo</p>
+            </div>
+        </div>
+
+        <div class="tabla-contenedor" style="max-width:720px">
+            <table class="tabla">
+                <thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr></thead>
+                <tbody>
+                <tr><td>One Piece #108</td><td>2</td><td>$95</td></tr>
+                <tr><td>Batman: Año Uno</td><td>1</td><td>$180</td></tr>
+                <tr><td>Spider-Man #12</td><td>1</td><td>$120</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="total" style="max-width:720px"><span>TOTAL</span><span class="monto">$490</span></div>
+
+        <div class="botones">
+            <a class="btn" href="detalle-venta.html">Guardar compra</a>
+            <a class="btn" href="registro-venta.html">Agregar producto +</a>
+        </div>
+    </main>
+</div>
+</body>
+</html>
