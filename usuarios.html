@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios - Weirdo Comics</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside id="sidebar" data-activo="Usuarios"></aside>
+
+    <main class="contenido">
+      <h1>Usuarios y empleados</h1>
+      <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+      <div class="barra">
+        <button class="btn" onclick="document.getElementById('modal-usuario').style.display='flex'">+ Nuevo usuario</button>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Rol</th>
+              <th class="centro">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Valeria Gallegos</td>
+              <td>valeria@weirdocomics.com</td>
+              <td><span class="estado estado-ok">Ventas</span></td>
+              <td class="centro">
+                <a href="#">Editar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal Nuevo Usuario -->
+      <div id="modal-usuario" class="modal-overlay" style="display: none;">
+        <div class="confirmacion" style="max-width: 500px; text-align: left;">
+          <h2 style="margin-bottom: 16px;">Información de usuario</h2>
+          <form class="form-datos">
+            <label>Usuario</label>
+            <input type="text" class="campo" placeholder="Ingresar nombre" required>
+
+            <label>Mail</label>
+            <input type="email" class="campo" placeholder="Ingresar mail" required>
+
+            <label>Rol</label>
+            <select class="selector">
+              <option value="Ventas">Ventas</option>
+              <option value="Almacén">Almacén</option>
+              <option value="Administrador">Administrador</option>
+            </select>
+
+            <div class="botones" style="margin-top: 24px;">
+              <button type="button" class="btn btn-gris" onclick="document.getElementById('modal-usuario').style.display='none'">Cancelar</button>
+              <button type="submit" class="btn">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/Sidebar.js"></script>
+</body>
+</html>

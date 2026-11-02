@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roles y Permisos - Weirdo Comics</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside id="sidebar" data-activo="Roles y permisos"></aside>
+
+    <main class="contenido">
+      <h1>Roles y permisos</h1>
+      <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+      <h2>Permisos por módulo</h2>
+      <div class="tabla-contenedor">
+        <table class="tabla matriz">
+          <thead>
+            <tr>
+              <th style="text-align: left;">Módulo</th>
+              <th>Administrador</th>
+              <th>Vendedor</th>
+              <th>Almacén</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left;">Ventas</td>
+              <td><input type="checkbox" checked disabled></td>
+              <td><input type="checkbox" checked disabled></td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;">Inventario / Almacén</td>
+              <td><input type="checkbox" checked disabled></td>
+              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" checked disabled></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;">Proveedores y Pedidos</td>
+              <td><input type="checkbox" checked disabled></td>
+              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" checked disabled></td>
+            </tr>
+            <tr>
+              <td style="text-align: left;">Reportes y Usuarios</td>
+              <td><input type="checkbox" checked disabled></td>
+              <td><input type="checkbox" disabled></td>
+              <td><input type="checkbox" disabled></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/Sidebar.js"></script>
+</body>
+</html>

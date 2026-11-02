@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proveedores - Weirdo Comics</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside id="sidebar" data-activo="Proveedores"></aside>
+
+    <main class="contenido">
+      <h1>Proveedores</h1>
+      <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+      <h2>Lista de proveedores</h2>
+      <div class="barra">
+        <button class="btn" onclick="document.getElementById('modal-nuevo').style.display='flex'">+ Nuevo proveedor</button>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Estado</th>
+              <th class="centro">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Comics Latam</td>
+              <td>442-360-1984</td>
+              <td>contacto@comicslatam.com</td>
+              <td><span class="estado estado-ok">Activo</span></td>
+              <td class="centro">
+                <a href="detalle-proveedor.html">Ver / Editar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal Nuevo Proveedor -->
+      <div id="modal-nuevo" class="modal-overlay" style="display: none;">
+        <div class="confirmacion" style="max-width: 500px; text-align: left;">
+          <h2 style="margin-bottom: 16px;">Nuevo proveedor</h2>
+          <form class="form-datos">
+            <label>Nombre de la empresa</label>
+            <input type="text" class="campo" placeholder="Ingresar nombre" required>
+
+            <label>Teléfono</label>
+            <input type="tel" class="campo" placeholder="Ingresar teléfono" required>
+
+            <label>Correo electrónico</label>
+            <input type="email" class="campo" placeholder="Ingresar correo" required>
+
+            <label>Dirección</label>
+            <input type="text" class="campo" placeholder="Ingresar dirección" required>
+
+            <div class="botones" style="margin-top: 24px;">
+              <button type="button" class="btn btn-gris" onclick="document.getElementById('modal-nuevo').style.display='none'">Cancelar</button>
+              <button type="submit" class="btn">Registrar proveedor</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/Sidebar.js"></script>
+</body>
+</html>
