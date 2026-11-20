@@ -42,7 +42,7 @@ function pintarSidebar() {
     </div>
     <div class="rol">${rol}</div>
     <nav>${enlaces}</nav>
-    <a href="./index.php" class="cerrar" id="cerrar-sesion">Cerrar sesión</a>
+    <a href="./index.html" class="cerrar" id="cerrar-sesion">Cerrar sesión</a>
   `;
 
     // Al cerrar sesión se limpia lo guardado

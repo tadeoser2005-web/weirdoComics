@@ -708,3 +708,155 @@ p {
     font-size: 7px;
     color: var(--gris);
 }
+
+.rp-bloque {
+    margin-top: 28px;
+}
+.rp-bloque > h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+    color: #444;
+}
+
+.rp-filtros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px; align-items: end;
+    background: #fff;
+    border: 1px solid #e6e6ea;
+    border-radius: 12px;
+    padding: 18px;
+}
+.rp-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.rp-campo label {
+    font-size: 13px;
+    color: #666;
+}
+.rp-campo input, .rp-campo select {
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #d5d5db;
+    border-radius: 8px;
+    font: inherit;
+    background: #fff;
+    color: #222;
+}
+.rp-campo input:focus, .rp-campo select:focus {
+    outline: 2px solid #c41e24;
+    outline-offset: 1px;
+}
+.rp-acciones {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.rp-btn {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: 1px solid #d5d5db;
+    background: #fff;
+    color: #222;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.rp-btn.primario {
+    background: #c41e24;
+    border-color: #c41e24;
+    color: #fff;
+}
+
+.rp-grafica {
+    background: #fff;
+    border: 1px solid #e6e6ea;
+    border-radius: 12px;
+    padding: 18px;
+    display: grid;
+    gap: 12px;
+}
+.rp-barra {
+
+    display: grid;
+    grid-template-columns: 130px 1fr 90px;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+}
+.rp-pista {
+    background: #efeff3;
+    border-radius: 6px;
+    height: 14px;
+    overflow: hidden;
+}
+.rp-relleno {
+    height: 100%;
+    background: #c41e24;
+    border-radius: 6px;
+}
+.rp-barra .monto {
+    text-align: right;
+    font-weight: 600;
+}
+
+.rp-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.rp-tab {
+    padding: 9px 16px;
+    border: 1px solid #d5d5db;
+    border-radius: 8px;
+    background: #fff;
+    font: inherit;
+    color: #444;
+}
+.rp-tab.activa {
+    background: #14141f;
+    border-color: #14141f;
+    color: #fff;
+}
+
+.rp-tabla-wrap {
+    overflow-x: auto;
+}
+.rp-tabla {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 640px;
+}
+.rp-tabla thead th {
+    background: #14141f;
+    color: #fff;
+    text-align: left;
+    font-size: 14px;
+    padding: 16px 18px;
+    white-space: nowrap;
+}
+.rp-tabla thead th:first-child {
+    border-radius: 14px 0 0 14px;
+}
+.rp-tabla thead th:last-child {
+    border-radius: 0 14px 14px 0;
+}
+.rp-tabla tbody td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #222;
+}
+
+.rp-tabla tfoot td {
+    padding: 14px 18px;
+    font-weight: 700;
+}
+.rp-tabla .num {
+    text-align: right;
+}

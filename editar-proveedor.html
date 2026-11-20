@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar producto | Weirdo Comics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="rojo">WEIRDO</span>
+            <span class="blanco">COMICS</span>
+        </div>
+        <div class="rol">Almacén</div>
+        <nav>
+            <a href="Inicio.html">Inicio</a>
+            <a href="Ventas.html">Ventas</a>
+            <a href="inventario.html" >Inventario</a>
+            <a href="proveedores.html" class="activo">Proveedores</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a href="reportes.html" >Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="roles.html">Roles y permisos</a>
+        </nav>
+        <a href="index.html" class="cerrar">Cerrar sesión</a>
+    </aside>
+    <main class="contenido">
+        <h1>Editar proveedor</h1>
+        <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+
+        <div class="detalle-grid">
+            <div class="imagen-placeholder">IMAGEN</div>
+
+            <form class="form-datos" action="proveedores.html" method="get" style="max-width:none">
+                <label for="nombre">Nombre</label>
+                <input class="campo" id="nombre" name="nombre" type="text"  value="Nombre proveedor" required>
+
+                <label for="direccion">Direccion</label>
+                <input class="campo" id="direccion" name="direccion" type="text" value="Direccion proveedor" required>
+
+                <label for="telefono">Telefono</label>
+                <input class="campo" id="telefono" name="telefono" type="text" value="telefono" required>
+
+
+                <label for="correo">Correo electronico</label>
+                <input class="campo" id="correo" name="correo" type="text" value="correo proveedor" required>
+
+
+
+                <div class="botones">
+                    <button class="btn" type="submit">Guardar</button>
+                    <a class="btn" href="eliminar-proveedor.html">Eliminar</a>
+                    <a class="btn btn-oscuro" href="proveedores.html">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

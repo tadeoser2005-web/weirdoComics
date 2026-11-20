@@ -5,40 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reportes - Weirdo Comics</title>
   <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
-  <div class="layout">
-    <aside id="sidebar" data-activo="Reportes"></aside>
+<div class="layout">
+  <aside id="sidebar" data-activo="Reportes"></aside>
 
-    <main class="contenido">
-      <h1>Reportes del Sistema</h1>
-      <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
+  <main class="contenido">
+    <h1>Reportes del Sistema</h1>
+    <p class="subtitulo">Weirdo Comics · Sistema administrativo</p>
 
-      <div class="stats">
-        <div class="stat">
-          <span class="etiqueta">Ventas Totales</span>
-          <div class="valor">$84,250</div>
-          <span class="detalle">Actualizado hoy</span>
-        </div>
-        <div class="stat">
-          <span class="etiqueta">Productos Vendidos</span>
-          <div class="valor">1,284</div>
-          <span class="detalle">Unidades totales</span>
-        </div>
-        <div class="stat">
-          <span class="etiqueta">Pedidos Realizados</span>
-          <div class="valor">37</div>
-          <span class="detalle">A proveedores</span>
-        </div>
-        <div class="stat">
-          <span class="etiqueta">Clientes Atendidos</span>
-          <div class="valor">312</div>
-          <span class="detalle">Transacciones</span>
-        </div>
+    <div class="stats">
+      <div class="stat">
+        <span class="etiqueta">Ventas Totales</span>
+        <div class="valor">$84,250</div>
+        <span class="detalle">Actualizado hoy</span>
       </div>
-    </main>
-  </div>
+      <div class="stat">
+        <span class="etiqueta">Productos Vendidos</span>
+        <div class="valor">1,284</div>
+        <span class="detalle">Unidades totales</span>
+      </div>
+      <div class="stat">
+        <span class="etiqueta">Pedidos Realizados</span>
+        <div class="valor">37</div>
+        <span class="detalle">A proveedores</span>
+      </div>
+      <div class="stat">
+        <span class="etiqueta">Clientes Atendidos</span>
+        <div class="valor">312</div>
+        <span class="detalle">Transacciones</span>
+      </div>
+    </div>
 
-  <script src="assets/js/Sidebar.js"></script>
+
+    <section class="rp-bloque">
+      <h2>Filtros</h2>
+      <form class="rp-filtros" onsubmit="return false">
+        <div class="rp-campo">
+          <label for="fDesde">Desde</label>
+          <input type="date" id="fDesde" value="2026-10-01">
+        </div>
+        <div class="rp-campo">
+          <label for="fHasta">Hasta</label>
+          <input type="date" id="fHasta" value="2026-11-09">
+        </div>
+        <div class="rp-campo">
+          <label for="fCategoria">Categoría</label>
+          <select id="fCategoria">
+            <option>Todas</option><option>Cómics</option><option>Figuras</option>
+          </select>
+        </div>
+
+        <div class="rp-campo">
+          <label for="fBuscar">Buscar</label>
+          <input type="search" id="fBuscar" placeholder="Producto, cliente o folio">
+        </div>
+        <div class="rp-acciones">
+          <button class="rp-btn primario" type="button">Aplicar filtros</button>
+          <button class="rp-btn" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+
+    <section class="rp-bloque">
+      <h2>Ventas por categoría</h2>
+      <div class="rp-grafica">
+        <div class="rp-barra"><span>Cómics</span><div class="rp-pista"><div class="rp-relleno" style="width:100%"></div></div><span class="monto">$3,109</span></div>
+        <div class="rp-barra"><span>Figuras</span><div class="rp-pista"><div class="rp-relleno" style="width:92%"></div></div><span class="monto">$3,609</span></div>
+        <div class="rp-barra"><span>Manga</span><div class="rp-pista"><div class="rp-relleno" style="width:62%"></div></div><span class="monto">$2,355</span></div>
+        <div class="rp-barra"><span>Accesorios</span><div class="rp-pista"><div class="rp-relleno" style="width:18%"></div></div><span class="monto">$690</span></div>
+      </div>
+    </section>
+
+
+    <section class="rp-bloque">
+      <h2>Detalle</h2>
+      <div class="rp-tabs">
+        <span class="rp-tab activa">Ventas</span>
+        <span class="rp-tab">Inventario</span>
+        <span class="rp-tab">Pedidos a proveedores</span>
+      </div>
+
+      <div class="rp-tabla-wrap">
+        <table class="rp-tabla">
+          <thead>
+          <tr>
+            <th>Folio</th>
+            <th>Fecha</th>
+            <th>Categoría</th>
+            <th>Producto</th>
+            <th class="num">Cant.</th>
+            <th class="num">Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>V-1001</td>
+            <td>2026-10-03</td>
+            <td>Cómics</td>
+            <td>Batman: Año Uno</td>
+            <td class="num">2</td>
+            <td class="num">$640</td>
+          </tr>
+          <tr>
+            <td>V-1002</td>
+            <td>2026-10-05</td>
+            <td>Manga</td>
+            <td>One Piece Vol. 100</td>
+            <td class="num">3</td>
+            <td class="num">$855</td>
+          </tr>
+          <tr>
+            <td>V-1003</td>
+            <td>2026-10-08</td>
+            <td>Figuras</td>
+            <td>Figura Spider-Man 12"</td>
+            <td class="num">1</td>
+            <td class="num">$1,299</td>
+          </tr>
+          <tr>
+            <td>V-1004</td>
+            <td>2026-10-11</td>
+            <td>Accesorios</td>
+            <td>Fundas protectoras x50</td>
+            <td class="num">4</td>
+            <td class="num">$380</td>
+          </tr>
+          <tr>
+            <td>V-1005</td>
+            <td>2026-10-14</td>
+            <td>Cómics</td>
+            <td>Watchmen edición deluxe</td>
+            <td class="num">1</td>
+            <td class="num">$899</td>
+          </tr>
+          <tr>
+            <td>V-1006</td>
+            <td>2026-10-18</td>
+            <td>Manga</td>
+            <td>Chainsaw Man Vol. 12</td>
+            <td class="num">2</td>
+            <td class="num">$520</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr><td colspan="6">Total</td><td class="num">13</td><td class="num">$4,593</td></tr>
+          </tfoot>
+        </table>
+      </div>
+
+
+
+    </section>
+  </main>
+</div>
+
+<script src="assets/js/Sidebar.js"></script>
 </body>
 </html>
